@@ -4,6 +4,9 @@ export interface CryptoOhlcv {
     high : number
     low  : number
     close : number
+    time : Date
+    volumefrom : number
+    volumeto : number
 
 }
 

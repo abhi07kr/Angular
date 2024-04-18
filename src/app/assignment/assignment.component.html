@@ -1,0 +1,22 @@
+<h1>Welcome To My Assignment Page!</h1>
+<div *ngIf="!isReady" class="container">
+<h2>Enter the User Name : <input type="text" [(ngModel)]="userName"></h2>
+ 
+<button  mat-raised-button color="primary" (click)="fetchData()" >CLICK THIS</button><br><br>
+</div>
+
+<div *ngIf="isReady">
+    <p>Name:  {{   user.name     }}</p>
+    <br>
+    <p>ID : {{    user.id    }} </p>
+    <br>
+    <p>BIO : {{     user.bio      }} </p>
+    <br>
+    <p >Location : {{      user.location      }}</p>
+    <br>
+    <p>Company : {{    user.company     }} </p>
+</div>
+<br>
+<div class="container" *ngIf="isReady">
+    <button mat-raised-button color="primary" (click)="resetData()">Reset</button>
+</div>

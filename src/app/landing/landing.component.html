@@ -1,0 +1,35 @@
+<!-- <body> 
+    
+
+<div  *ngFor="let entry of navArray">
+    <div> <nav class="navMenu">
+        <button [routerLink]="entry">
+            <a href="">{{entry}}</a>
+        </button>
+        <div class="dot"></div>
+        </nav>
+    </div><br>
+
+</div>
+</body>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="landing-box">
+        <h2 class="welcome">Welcome To My Landing Page</h2>
+    <div *ngFor="let entry of navArray">
+        <button mat-raised-button color="primary" class="button" [routerLink]="entry"><h4>{{entry | uppercase}}</h4></button>   
+    </div>
+    
+</div>
+</body>
+</html>
+

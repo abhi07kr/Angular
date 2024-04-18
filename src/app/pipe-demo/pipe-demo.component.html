@@ -1,23 +1,24 @@
-<p>pipe-demo works!</p>
+<h1>This Is The Pipe Demo Page !</h1>
 
 
-
-{{      dateTimeObj |   date:'fullDate'       }}
+<div>
+<p>Full Date : {{ dateTimeObj |   date:'fullDate'       }}</p>
 
 <br>
 
 
-{{  dateTimeObj | date:'shortDate'  }}
+<p>Short Date : {{  dateTimeObj | date:'shortDate'  }}</p>
 <br>
-{{  dateTimeObj | date:'fullTime'  }}
+<p> Full Time : {{  dateTimeObj | date:'fullTime'  }}</p>
 <br>
-{{  amount | currency:'USD':'symbol':'5.3-4'  }}
-<br>
-
-{{data | uppercase}}
+<p> Currency : {{  amount | currency:'USD':'symbol':'5.3-4'  }}</p>
 <br>
 
-{{data | lowercase}}
+<p>Using Upper Case : {{data | uppercase}}</p>
 <br>
 
-{{      pctValue | percent     }}
+<p>Using Lower Case : {{data | lowercase}}</p>
+<br>
+
+<p>Using Percentage : {{      pctValue | percent     }}</p>
+</div>

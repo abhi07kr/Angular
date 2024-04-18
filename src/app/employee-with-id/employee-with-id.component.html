@@ -1,0 +1,9 @@
+<h1>This is Employee With ID Page! </h1>
+
+<div *ngIf="isReady">
+    {{ employee | json}}
+</div>
+
+<div>
+    Enter the Employee ID : <input type="text" name="" [(ngModel)]="employeeid" id=""><button (click)="getDetails()">CLICK</button>
+</div>

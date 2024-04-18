@@ -20,7 +20,6 @@ export class GithubUserComponent {
   fetchData(){
     let url : string = "https://api.github.com/users/fabpot"
     
-
     //syntax for subscribe has changed starting from angular 8+
     this.srv.getUserResponse(url).subscribe(
         {
@@ -28,6 +27,11 @@ export class GithubUserComponent {
           complete : () => { this.isReady=true ; console.log("API COMPLETE")}        
         }
       )
+    }
+    resetData(){
+      
+      this.isReady = false
+      
     }
    
 }

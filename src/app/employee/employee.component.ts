@@ -12,6 +12,7 @@ export class EmployeeComponent {
 
   ngOnInit(){
     let empObj1 : Employee ={
+      employeeId : 101,
       employeeName : "Ajay", 
       employeeAge : 32, 
       employeeEmailId : "ajay@abc.com", 
@@ -19,6 +20,7 @@ export class EmployeeComponent {
       }
 
     let empObj2 : Employee ={
+      employeeId : 102,
       employeeName : "Shreyanshi", 
       employeeAge : 30, 
       employeeEmailId : "chiya@abc.com", 

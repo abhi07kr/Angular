@@ -9,20 +9,37 @@ import { CryptoApiService } from '../crypto-api.service';
 })
 export class CryptoSinglePriceComponent {
   isReady : boolean = false
-
+  currency : string = ""
   response! : CryptoResponse
 
   constructor(private srv : CryptoApiService) {}
 
   fetchResponse(){
-    let url : string = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR"
-    this.srv.fetchResponse(url).subscribe(
-      {
-
-          next : (value : CryptoResponse) => {this.response = value},
-          complete : ()=>{this.isReady = true; console.log('FINISHED') }
-
-      }
-    )
+    let url : string = `https://min-api.cryptocompare.com/data/price?fsym=${this.currency}&tsyms=INR,USD,JPY,EUR`
+    if (this.currency=="") {
+      
+      this.srv.fetchResponse("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=INR,USD,JPY,EUR").subscribe(
+        {
+  
+            next : (value : CryptoResponse) => {this.response = value},
+            complete : ()=>{this.isReady = true; console.log('FINISHED') }
+  
+        }
+      )
+    } else {
+      this.srv.fetchResponse(url).subscribe(
+        {
+  
+            next : (value : CryptoResponse) => {this.response = value},
+            complete : ()=>{this.isReady = true; console.log('FINISHED') }
+  
+        }
+      )
+    }
+    
+  }
+  resetData(){
+    this.isReady = false
+    this.currency = ""
   }
 }

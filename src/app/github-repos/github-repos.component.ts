@@ -34,6 +34,13 @@ export class GithubReposComponent {
       }
     )
   }
+
+  resetData(){
+      
+    this.isReady = false
+    
+  }
+ 
 }
 
 

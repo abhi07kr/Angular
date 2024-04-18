@@ -1,0 +1,15 @@
+[{ 
+    "employeeId" : 101,
+    "employeeName" : "Ajay", 
+    "employeeAge" : 32, 
+    "employeeEmailId" : "ajay@abc.com", 
+    "employeeSkills" : ["programming", "Machine Learning"]
+},
+{   
+    "employeeId" : 102,
+    "employeeName" : "Shreyanshi", 
+    "employeeAge" : 30, 
+    "employeeEmailId" : "chiya@abc.com", 
+    "employeeSkills" : ["documentation", "api development"]
+  }]
+  

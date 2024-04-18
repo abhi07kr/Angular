@@ -1,4 +1,51 @@
 <p>crypto-history works!</p>
 
-
+<div *ngIf="!isReady">
+Enter the number of days you want to get the data for : <input type="text" [(ngModel)]="limit">
 <button  *ngIf="!isReady" (click)="fetchHistoricalPrices()">Click Here</button>
+</div>
+
+
+<div *ngIf="isReady" class="table">
+    <table>
+        <th>Time</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Open</th>
+        <th>Close</th>
+        <th>Volume From</th>
+        <th>Volume To</th>
+    
+    
+        <tr *ngFor="let response of responses">
+            <td>
+                {{response.time}}
+            </td>
+    
+            <td>
+                {{response.high}}
+            </td>
+    
+            <td>
+                {{response.low}}
+            </td>
+    
+            <td>
+                {{response.open}}
+            </td>
+            <td>
+                {{response.close}}
+            </td>
+            <td>
+                {{response.volumefrom}}
+            </td>
+            <td>
+                {{response.volumeto}}
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <div *ngIf="isReady">
+        <button (click)="resetData()">Reset</button>
+    </div>

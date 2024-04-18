@@ -1,0 +1,236 @@
+<!--  
+<div class="container">
+
+    <h2> User Info </h2>
+
+    <form  [formGroup]="userForm"  (ngSubmit)="onSave()"> 
+
+
+    <div class="form-group">
+
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter Your Name" type="text" class = "form-control" formControlName="name">
+        <mat-icon class="icons">account_circle</mat-icon>
+        <mat-hint>Min - 4 , Max - 10</mat-hint>
+      </mat-form-field>
+    
+
+    <div *ngIf="userForm.controls['name'].hasError('required')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:12px;font-style:italic;">Please enter a name</p>
+    </div>
+
+    <div *ngIf="userForm.controls['name'].hasError('minlength')">
+    <p style = "font-family:algeria,georgia,garamond,serif;font-size:16px;font-style:italic;">Please enter a name of at least 4 characters</p>
+    </div>
+
+    <div *ngIf="userForm.controls['name'].hasError('maxlength')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:16px;font-style:italic;">Please enter a name of at most 10 characters</p>
+    </div>
+
+    </div>
+
+    <br>
+    
+
+
+
+    <div class="form-group">
+
+    
+    <mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input matInput placeholder="Enter Your Age" type="text" class = "form-control" formControlName="age">
+    <mat-icon class="icons">calendar_today</mat-icon>
+    <mat-hint>Between 0 - 150</mat-hint>
+    </mat-form-field>  
+
+    <div *ngIf="userForm.controls['age'].hasError('required')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:12px;font-style:italic;">Please enter a valid age between 0 and 150</p>
+    </div>
+
+    <div *ngIf="userForm.controls['age'].hasError('min')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:12px;font-style:italic;">Minimum age should be 0</p>
+    </div>
+
+    <div *ngIf="userForm.controls['age'].hasError('max')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:12px;font-style:italic;">Maximum age should be 150</p>
+    </div>
+
+    </div>
+
+
+    <br>
+    
+
+    <div class="form-group">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select class = "form-control" formControlName="gender" [value]="gender" required>
+          <mat-option>---</mat-option>
+          <mat-option >MALE</mat-option>
+          <mat-option >FEMALE</mat-option>
+          <mat-option >OTHER</mat-option>
+        </mat-select>
+        <mat-error>Please choose a Gender</mat-error>
+      </mat-form-field>
+
+        
+      <div *ngIf="userForm.controls['gender'].hasError('required')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:12px;font-style:italic;">Please select a gender option</p>
+      </div>
+
+    </div>
+    
+
+    <br>
+
+
+    <div class="form-group" >
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter Your Email" type="email" class = "form-control" formControlName="email">
+        <mat-icon class="icons"> mail_outline</mat-icon>
+        <mat-hint>Shall Contain @</mat-hint>
+      </mat-form-field>
+
+
+      <div *ngIf="userForm.controls['email'].hasError('pattern')">
+        <p style = "font-family:algeria,georgia,garamond,serif;font-size:12px;font-style:italic;">Please enter acceptable email ID</p>
+
+    </div>
+    </div>
+
+
+    <br>
+
+
+    <div formGroupName="address">
+
+      <div class="form-group" >
+        <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Enter Your Adress" type="text" class = "form-control" formControlName="street">
+            <mat-icon class="icons">home</mat-icon>
+            <mat-hint>Landmark and As such</mat-hint>
+          </mat-form-field>
+
+      </div>
+      
+
+    <br>
+    <div class="form-group">
+
+      
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <input class="icons" matInput placeholder="Enter Your Name" type="text" class = "form-control" formControlName="city">
+        <mat-icon class="icons">location_city</mat-icon>
+        <mat-hint>Your Home City</mat-hint>
+      </mat-form-field> 
+
+    </div>
+
+    <br>
+
+    <div class="form-group" >
+
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Zip Code</mat-label>
+        <input matInput placeholder="Enter Your Postal Code" type="text" class = "form-control" formControlName="postal_code">
+        <mat-icon class="icons"> pin_drop</mat-icon>
+        <mat-hint>6 Digit Number</mat-hint> 
+      </mat-form-field>
+    
+    </div>
+
+
+    </div>
+
+
+    <br>
+    <br>
+  <button mat-raised-button color="accent" type="submit" class="btn btn-primary" [disabled]="!userForm.valid">  Submit Form  </button>
+</form>
+
+-->
+
+
+<div class="login-box">
+  <h2>User Info</h2>
+  <form [formGroup]="userForm"  (ngSubmit)="onSave()">
+
+    <div class="form-group">
+    <div class="user-box" >
+      <input type="text" name="" required="" formControlName="name">
+      <label>Username</label>
+    </div>
+    <div *ngIf="userForm.controls['name'].hasError('required')">
+      <p >Please enter a name</p>
+  </div>
+
+  <div *ngIf="userForm.controls['name'].hasError('minlength')">
+  <p>Please enter a name of at least 4 characters</p>
+  </div>
+
+  <div *ngIf="userForm.controls['name'].hasError('maxlength')">
+      <p >Please enter a name of at most 10 characters</p>
+  </div>
+
+  </div>
+
+  <div class="form-group"></div>
+    <div class="user-box">
+      <input type="text" name="" required  formControlName="age">
+      <label>Age</label>
+    </div>
+
+
+    <div class="form-group">
+    <div class="user-box">
+      <input type="email" name="" required=""  formControlName="email">
+      <label>Email</label>
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <div class="user-box">
+      <input type="text" name="" required=""  >
+      <label>Address</label>
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <div class="user-box">
+      <input type="text" name="" required=""  >
+      <label>City</label>
+    </div>
+
+    
+  </div>
+
+
+    <div class="form-group">
+    <div class="user-box">
+      <input type="text" name="" required=""  >
+      <label>Zipcode</label>
+    </div>
+  </div>
+
+  
+    <a  (click)="onSave()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+      
+    </a>
+  </form>
+</div>

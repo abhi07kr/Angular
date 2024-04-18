@@ -1,15 +1,29 @@
-<p>crypto-single-price works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome To The Crypto API Page</h1>
+<div *ngIf="!isReady" >
+    <P>Crypto Currency Name: <input type="text"   [(ngModel)]="currency"></P> 
+    <button mat-raised-button color="accent" (click)="fetchResponse()">CLICK THIS</button><br><br>
+</div>
 
 
 <div *ngIf="isReady">
 
-    USD : {{   response.USD   }}
-    JPY : {{response.JPY}}
-    EUR : {{ response.EUR }}
+    <p >USD : {{   response.USD   }} </p><br>
+    <p>JPY : {{response.JPY}} </p><br>
+    <p>EUR : {{ response.EUR }} </p><br>
 
 </div>
 
-
-<div  *ngIf="!isReady">
-<button (click)="fetchResponse()">CLICK THIS</button>
+<div *ngIf="isReady">
+    <button  mat-raised-button color="accent" (click)="resetData()">Reset</button>
 </div>
+</body>
+</html>

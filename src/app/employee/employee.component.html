@@ -1,16 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div *ngFor="let employee of employeeRecord">
 
-<div *ngFor="let employee of employeeRecord">
-
-    <h1>NAME: {{employee.employeeName}}   </h1>
-
-    <h4> AGE : {{employee.employeeAge}}   </h4>
+        <h2>Name: {{employee.employeeName}}   </h2>
     
-    <h5>EMAIL ID:  {{employee.employeeEmailId}}</h5>
+        <h2>Age : {{employee.employeeAge}}   </h2>
+        
+        <h2>Email Id:  {{employee.employeeEmailId}}</h2>
     
+        <ul  *ngFor="let skill of employee.employeeSkills"  >
+            <li> {{skill}}  </li>
+        </ul>
+    </div>
+</body>
+</html>
 
-
-    <ul  *ngFor="let skill of employee.employeeSkills"  >
-        <li> {{skill}}  </li>
-    </ul>
-</div>
 

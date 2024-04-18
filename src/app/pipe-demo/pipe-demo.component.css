@@ -1,0 +1,21 @@
+h1{
+    font-family: Rockwell, "Courier New", Courier, Georgia,Times, "Times New Roman", serif;
+    text-align: center;
+    padding: 50px;
+    font-size: 40px;   
+}
+
+p{
+    font-family: Rockwell, "Courier New", Courier, Georgia,
+                 Times, "Times New Roman", serif;
+    text-align: center;
+    font-size: 30px;
+    padding: auto;
+    font-weight: bold;
+    color : #ffffcc;
+    display: flexbox;
+}
+
+div{
+    margin : 20px;
+}

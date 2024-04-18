@@ -1,19 +1,25 @@
-<p>github-user works!</p>
+<h1>Page To Fetch GitHub Account Details Of Fabient Potencier</h1>
 
 
+<div class="container" *ngIf="!isReady">
+    <button  mat-raised-button color="primary" (click)="fetchData()" >CLICK THIS</button>
+</div>
 
 
-<button  (click)="fetchData()"   >CLICK THIS</button>
 
 
 <div *ngIf="isReady">
-    Name:  {{   user.name     }}
+   <p>Name : {{user.name}}</p>
     <br>
-    ID : {{    user.id    }}
+   <p>ID : {{user.id    }}</p> 
     <br>
-    BIO : {{     user.bio      }}
+   <p>BIO : {{ user.bio }}</p>
     <br>
-    Location : {{      user.location      }}
+   <p>Location : {{  user.location  }}</p>
     <br>
-    Company : {{    user.company     }}
+   <p>Company : {{  user.company  }}</p>
+</div>
+
+<div class="container" *ngIf="isReady">
+    <button mat-raised-button color="primary" (click)="resetData()">Reset</button>
 </div>

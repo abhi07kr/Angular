@@ -1,0 +1,108 @@
+
+
+
+
+<div class="login-box">
+
+    <h2> User Info </h2>
+
+  
+    <form #userForm="ngForm"  (ngSubmit) = "OnSubmit(userForm.value)" > 
+
+
+    <div class="form-group">
+      <div class="user-box">
+      
+      <!--required with a minimum length of 4-->
+      <input type="text" class = "form-control" name="userName" [(ngModel)]="userName"  required minlength="4" 
+          maxlength="10" #nameField="ngModel" maxlength="10" >
+        <label> Name </label>
+    </div>
+    </div>
+
+    <!--
+        Name has to be validated. We need to take actions & print msgs based on state of validation
+    -->
+      
+
+
+    <div  *ngIf="nameField.touched" name="validatingName">
+
+        <p *ngIf="nameField.errors?.['required']" class="error"> First Name is mandatory </p>
+        <p *ngIf="nameField.errors?.['minlength']"> minimum length should be 4 </p>
+        <p *ngIf="nameField.errors?.['maxlength']"> maximum length should be 10. try again! </p>
+
+    </div> 
+
+
+    <div class="form-group">
+
+      <div class="user-box">
+      <input type="email" class = "form-control" name="email" [(ngModel)]="userEmail" pattern="^[a-z][a-z0-9_]{3,}@[a-z]+\.[a-z]{2,4}" required #emailField="ngModel">
+      <label> Email </label>
+    </div>
+    </div>
+
+    <!--validate email-->
+
+    <div  *ngIf="emailField.touched" name="validatingName">
+
+      <p *ngIf="emailField.errors?.['required']" class="error"> EMAIL ID is mandatory </p>
+      <p *ngIf="emailField.errors?.['pattern']"> pattern does not match </p>
+
+  </div> 
+
+
+
+
+  <div class="form-group">
+    <div class="user-box">
+     <input type="text" class = "form-control" name="mobile" [(ngModel)]="userMobile" pattern="^\+91[6-9][0-9]{9}" required #mobileField="ngModel">
+     <label> Mobile </label>
+    </div>
+  
+  </div>
+
+  <!--validate email-->
+
+  <div  *ngIf="mobileField.touched" name="validatingName">
+
+    <p *ngIf="mobileField.errors?.['required']" class="error"> Mobile number is mandatory </p>
+    <p *ngIf="mobileField.errors?.['pattern']"> pattern does not match </p>
+
+</div>
+
+
+    <!-- <div ngModelGroup="address"> -->
+
+      <div class="form-group"> 
+        <div class="user-box">
+        
+        <input type="text" class = "form-control" name="street" [(ngModel)]="userStreet">
+        <label> Street </label>
+      </div>
+      </div>
+
+    <div class="form-group">
+      <div class="user-box">
+      <input type="text" class = "form-control" name="city" [(ngModel)]="userCity">
+      <label> City </label>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <div class="user-box">
+      
+      <input type="text" class = "form-control" name="zipcode" [(ngModel)]="userZipCode">
+      <label> Zip Code </label>
+    </div>
+    </div>
+
+
+ 
+
+
+  <button  mat-raised-button color="primary" type="submit" class="btn btn-primary">  Submit Form  </button>
+
+</form>
+</div> 
